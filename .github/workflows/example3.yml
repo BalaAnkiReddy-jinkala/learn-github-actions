@@ -1,0 +1,10 @@
+name: example3
+on: [push]
+jobs:
+  container-test-job:
+    runs-on: self-hosted
+    container:
+      image: docker.io/rkalluru/learn8s:rhe19-bare
+    steps:
+      - name: Just Hello
+        run: echo Hello
