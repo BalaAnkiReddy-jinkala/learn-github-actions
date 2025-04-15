@@ -1,0 +1,26 @@
+name: example02
+on:
+  workflow_dispatch:
+    input:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+        print_tags:
+          description: 'True to print STDOUT'
+          required: true
+          type: boolean
+        tags:
+          description:
+            required: true
+            type: string
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: "echo Tags - $ {{input.tags}}logLevel-${{input.logLevel}} "
