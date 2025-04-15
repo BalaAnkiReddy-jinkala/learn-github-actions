@@ -1,7 +1,8 @@
+
 name: example02
 on:
   workflow_dispatch:
-    input:
+    inputs:
       logLevel:
         description: 'Log level'
         required: true
@@ -11,14 +12,18 @@ on:
           - info
           - warning
           - debug
-        print_tags:
-          description: 'True to print STDOUT'
-          required: true
-          type: boolean
-        tags:
-          description:
-            required: true
-            type: string
+      print_tags:
+        description: 'True to print to STDOUT'
+        required: true
+        type: boolean
+      tags:
+        description: 'Test scenario tags'
+        required: true
+        type: string
+#       environment:
+#         description: 'Environment to run tests against'
+#         type: environment
+#         required: true
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
